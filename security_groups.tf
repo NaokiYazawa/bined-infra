@@ -6,6 +6,6 @@ module "security_groups" {
   database_port                   = 5432
   aws_security_group_alb_name     = "alb-sg"
   aws_security_group_ecs_name     = "ecs-sg"
-  aws_security_group_aurora_name  = "rds-sg"
+  aws_security_group_rds_name     = "rds-sg"
   aws_security_group_bastion_name = "bastion-sg"
 }
