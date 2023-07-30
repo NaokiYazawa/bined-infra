@@ -1,7 +1,7 @@
 [
   {
     "name": "bined-hasura",
-    "image": "hasura/graphql-engine:v2.30.0",
+    "image": "hasura/graphql-engine:v2.30.1",
     "portMappings": [
       {
         "hostPort": 8080,
