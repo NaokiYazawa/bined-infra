@@ -1,0 +1,78 @@
+{
+  "family": "bined-hasura",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "bined-hasura",
+      "image": "hasura/graphql-engine:v2.30.0",
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "HASURA_GRAPHQL_METADATA_DATABASE_URL",
+          "value": "postgres://hasurauser:vw:l+ySQ*uIN$.hMS5kt1n%&[(9Q@bined-hasura.c8dzjeklcznk.ap-northeast-1.rds.amazonaws.com:5432/hasuradefault"
+        },
+        {
+          "name": "PG_DATABASE_URL",
+          "value": "postgres://hasurauser:vw:l+ySQ*uIN$.hMS5kt1n%&[(9Q@bined-hasura.c8dzjeklcznk.ap-northeast-1.rds.amazonaws.com:5432/hasuradefault"
+        },
+        {
+          "name": "HASURA_GRAPHQL_ADMIN_SECRET",
+          "value": "password"
+        },
+        {
+          "name": "HASURA_GRAPHQL_ENABLE_CONSOLE",
+          "value": "true"
+        },
+        {
+          "name": "HASURA_GRAPHQL_DEV_MODE",
+          "value": "true"
+        },
+        {
+          "name": "HASURA_GRAPHQL_ENABLED_LOG_TYPES",
+          "value": "startup, http-log, response-caching-log, webhook-log, websocket-log, query-log"
+        },
+        {
+          "name": "HASURA_GRAPHQL_MAX_CACHE_SIZE",
+          "value": "200"
+        },
+        {
+          "name": "HASURA_GRAPHQL_SERVER_PORT",
+          "value": "8080"
+        },
+        {
+          "name": "HASURA_GRAPHQL_JWT_SECRET",
+          "value": {
+            "type": "HS256",
+            "key": "69f8fd4d54342b7ee3b0fcdf6def434c"
+          }
+        }
+      ],
+      "healthCheck": {
+        "retries": 3,
+        "command": [
+          "CMD-SHELL",
+          "curl -f http://localhost:8080/healthz || exit 1"
+        ],
+        "timeout": 5,
+        "interval": 30,
+        "startPeriod": 30
+      }
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2GB",
+  "tags": [
+    {
+      "key": "name",
+      "value": "hasura"
+    }
+  ]
+}
