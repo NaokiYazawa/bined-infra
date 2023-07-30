@@ -21,6 +21,7 @@ module "db" {
   port     = 5432
 
   multi_az               = false
+  availability_zone      = "ap-northeast-1a"
   db_subnet_group_name   = module.network.database_subnet_group_name
   vpc_security_group_ids = [module.security_groups.security_group_rds_id]
 
