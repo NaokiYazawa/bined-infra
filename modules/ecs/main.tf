@@ -87,6 +87,11 @@ data "aws_iam_policy_document" "ecs_task_execution" {
     actions   = ["ecs:ExecuteCommand"]
     resources = ["arn:aws:iam::110728338021:role/ecsTaskExecutionRole"]
   }
+  statement {
+    effect    = "Allow"
+    actions   = ["secretsmanager:GetSecretValue"]
+    resources = ["*"]
+  }
 }
 
 module "ecs_task_execution_role" {
