@@ -27,7 +27,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
   cpu                      = 256
   memory                   = 512
   requires_compatibilities = ["FARGATE"]
-  container_definitions    = templatefile("${path.module}/task_definitions.json")
+  container_definitions    = templatefile("${path.module}/task_definitions.json", {})
   # NOTE: Dummy container for initial.
 #   container_definitions = <<CONTAINERS
 # [
