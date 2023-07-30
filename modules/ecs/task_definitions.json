@@ -45,7 +45,7 @@
       },
       {
         "name": "HASURA_GRAPHQL_JWT_SECRET",
-        "value": "{ 'type': 'HS256', 'key': '69f8fd4d54342b7ee3b0fcdf6def434c' }"
+        "value": "{ \"type\": \"HS256\", \"key\": \"69f8fd4d54342b7ee3b0fcdf6def434c\" }"
       }
     ],
     "healthCheck": {
