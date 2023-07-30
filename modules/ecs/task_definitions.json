@@ -13,11 +13,11 @@
     "environment": [
       {
         "name": "HASURA_GRAPHQL_METADATA_DATABASE_URL",
-        "value": "postgres://hasurauser:vw:l+ySQ*uIN$.hMS5kt1n%&[(9Q@bined-hasura.c8dzjeklcznk.ap-northeast-1.rds.amazonaws.com:5432/hasuradefault"
+        "value": "postgres://hasurauser:hasurapassword@bined-hasura.c8dzjeklcznk.ap-northeast-1.rds.amazonaws.com:5432/hasuradefault"
       },
       {
         "name": "PG_DATABASE_URL",
-        "value": "postgres://hasurauser:vw:l+ySQ*uIN$.hMS5kt1n%&[(9Q@bined-hasura.c8dzjeklcznk.ap-northeast-1.rds.amazonaws.com:5432/hasuradefault"
+        "value": "postgres://hasurauser:hasurapassword@bined-hasura.c8dzjeklcznk.ap-northeast-1.rds.amazonaws.com:5432/hasuradefault"
       },
       {
         "name": "HASURA_GRAPHQL_ADMIN_SECRET",
