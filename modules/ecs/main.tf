@@ -3,11 +3,12 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 }
 
 resource "aws_ecs_service" "ecs_service" {
-  name            = var.ecs_service_name
-  launch_type     = "FARGATE"
-  cluster         = aws_ecs_cluster.ecs_cluster.id
-  task_definition = aws_ecs_task_definition.ecs_task_definition.arn
-  desired_count   = var.ecs_service_desired_count
+  name                   = var.ecs_service_name
+  launch_type            = "FARGATE"
+  cluster                = aws_ecs_cluster.ecs_cluster.id
+  task_definition        = aws_ecs_task_definition.ecs_task_definition.arn
+  desired_count          = var.ecs_service_desired_count
+  enable_execute_command = true
   network_configuration {
     subnets         = var.private_subnets
     security_groups = [var.security_group_ecs_id]
