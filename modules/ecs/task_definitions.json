@@ -42,10 +42,12 @@
       {
         "name": "HASURA_GRAPHQL_SERVER_PORT",
         "value": "8080"
-      },
+      }
+    ],
+    "secrets": [
       {
         "name": "HASURA_GRAPHQL_JWT_SECRET",
-        "value": "{ \\\"type\\\": \\\"HS256\\\", \\\"key\\\": \\\"69f8fd4d54342b7ee3b0fcdf6def434c\\\" }"
+        "valueFrom": "arn:aws:secretsmanager:ap-northeast-1:761817748648:secret:bined/hasura-graphql-jwt-secret-yI1yMH"
       }
     ],
     "healthCheck": {
