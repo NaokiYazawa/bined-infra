@@ -16,8 +16,8 @@ module "db" {
   # NOTE: Do NOT use 'user' as the value for 'username' as it throws:
   # "Error creating DB Instance: InvalidParameterValue: MasterUsername
   # user cannot be used as it is a reserved word used by the engine"
-  db_name  = "hasura"
-  username = "hasura-user"
+  db_name  = "hasuradefault"
+  username = "hasurauser"
   port     = 5432
 
   multi_az               = false
