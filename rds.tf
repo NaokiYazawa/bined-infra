@@ -1,7 +1,7 @@
 module "db" {
   source = "terraform-aws-modules/rds/aws"
 
-  identifier = local.name
+  identifier = local.common_name
 
   # All available versions: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts
   engine               = "postgres"
