@@ -8,7 +8,7 @@ module "db" {
   engine_version       = "15"
   family               = "postgres15" # DB parameter group
   major_engine_version = "15"         # DB option group
-  instance_class       = "db.t2.micro"
+  instance_class       = "db.t3.micro"
 
   allocated_storage     = 20
   max_allocated_storage = 100
