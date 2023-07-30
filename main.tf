@@ -15,3 +15,7 @@ terraform {
     }
   }
 }
+
+locals {
+  common_name = "bined-hasura"
+}
