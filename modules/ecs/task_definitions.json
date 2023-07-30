@@ -51,7 +51,7 @@
       }
     ],
     "healthCheck": {
-      "retries": 3,
+      "retries": 2,
       "command": [
         "CMD-SHELL",
         "curl -f http://localhost:8080/healthz || exit 1"
